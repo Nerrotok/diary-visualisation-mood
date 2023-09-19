@@ -1,8 +1,5 @@
-import re
 import streamlit as st
-import nltk
 import plotly.express as px
-import os
 import glob
 from nltk.sentiment import SentimentIntensityAnalyzer
 
@@ -13,7 +10,7 @@ st.subheader("Positivity")
 diary_entries = [entry for entry in glob.glob("diary/*.txt")]
 
 # Get the entry dates without the directory
-entry_dates = [entry.strip(".txt").replace(entry[0:6],"",) for entry in diary_entries]
+entry_dates = [entry.strip(".txt").replace(entry[0:6], "",) for entry in diary_entries]
 
 # Make a list of the diary entry texts
 diary_entries_text = []
